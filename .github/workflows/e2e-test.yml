@@ -28,7 +28,7 @@ jobs:
         run:
           ./hack/check-module.sh "origin/${{ github.base_ref }}"
   e2e:
-    if: ${{ github.repository == 'huaweicloud/huaweicloud-csi-driver' && needs.before_run_e2e.outputs.skip_e2e == 'false' && contains(github.event.pull_request.labels.*.name, 'ok-to-test') }}
+    if: ${{ github.repository == 'testforSRC/huaweicloud-csi-driver' && needs.before_run_e2e.outputs.skip_e2e == 'false' && contains(github.event.pull_request.labels.*.name, 'ok-to-test') }}
     name: e2e test
     needs: [ before_run_e2e ]
     runs-on: self-hosted
